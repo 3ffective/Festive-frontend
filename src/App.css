@@ -1,0 +1,94 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.card-slide {
+  transform: rotateY(-15deg) scale(0.85);
+  transition: all 0.3s ease;
+  z-index: 0;
+}
+.slick-center .card-slide {
+  transform: rotateY(0deg) scale(1.05) !important;
+  z-index: 10;
+}
+
+.slick-slide {
+  opacity: 0.5;
+  transform: rotateY(-10deg) scale(0.8);
+  transition: all 0.3s ease;
+}
+.slick-center {
+  opacity: 1 !important;
+  transform: rotateY(0deg) scale(1) !important;
+  z-index: 1;
+}
+.festival-card {
+  width: 140px;
+  height: 220px;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: scale(0.95);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.festival-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.festival-image-placeholder {
+  height: 120px;
+  background-color: #bbb;
+}
+
+.festival-content-placeholder {
+  padding: 0.8rem;
+}
+
+.line {
+  background-color: #ccc;
+  height: 12px;
+  margin-bottom: 6px;
+}
+
+.line.short {
+  width: 80%;
+}

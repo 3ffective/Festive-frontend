@@ -1,0 +1,147 @@
+.main-bg {
+  min-height: 100vh;
+  width: 100vw;
+  position: relative;
+  overflow-x: hidden;
+  /* background 속성 없음! (JSX style에서 이미지 적용) */
+}
+
+/* 배경 어두운 오버레이 */
+.main-bg::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 0;
+  pointer-events: none;
+  transition: background 0.5s;
+}
+.main-content, .section {
+  position: relative;
+  z-index: 1;
+}
+
+/* 세 섹션(풀스크린, 중앙정렬, 여백) */
+.section {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 0 5rem 0;
+}
+
+.festival-section { padding-top: 60px; }
+.card-section { padding-bottom: 60px; }
+
+.festival-carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 320px;
+  position: relative;
+  margin-bottom: 4rem;
+}
+.carousel-track {
+  position: relative;
+  width: 500px;
+  height: 270px;
+}
+.carousel-arrow {
+  background: none;
+  border: none;
+  font-size: 2.4rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10;
+  padding: 0 2rem;
+  transition: color 0.2s;
+}
+.carousel-arrow:disabled {
+  color: #444;
+  cursor: not-allowed;
+}
+
+/* 축제 카드 */
+.festival-card {
+  background: #fff !important;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  border-radius: 14px;
+}
+
+.recommend-carousel {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.card-track {
+  display: flex;
+  gap: 2rem;
+  overflow: hidden;
+}
+.card-slide {
+  background: #fff !important;
+  width: 320px;
+  min-height: 160px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.13);
+  padding: 2.2rem 1.5rem 1.4rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* 키워드 검색 */
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #e0e0e0cc;
+  border-radius: 999px;
+  padding: 0.8rem 1.2rem;
+  width: 80%;
+  max-width: 450px;
+  margin: 0 auto 2rem auto;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+.search-bar input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 1.05rem;
+  outline: none;
+  color: #222;
+}
+
+/* 글씨 스타일 */
+.section-label {
+  font-size: 1.05rem;
+  color: #eee;
+  margin-bottom: 0.15rem;
+  letter-spacing: -0.07em;
+}
+.section-title {
+  color: #fff;
+  font-size: 2.3rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  margin: 0 0 1.2rem 0;
+  text-shadow: 0 2px 16px #1a095020;
+}
+.festival-search-label h3 {
+  text-align: center;
+  margin-bottom: 1.6rem;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.35rem;
+  text-shadow: 0 1px 8px #2228;
+}
+.map-section h2, .card-section h3 {
+  color: #fff !important;
+  text-shadow: 0 1px 10px #1c134088;
+}
+.map-section p {
+  color: #e7e7e7 !important;
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+}
